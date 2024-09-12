@@ -1,5 +1,5 @@
 data "aws_instance" "existing" {
-  instance_id = "i-063327382b7d034af"
+  instance_id = "i-0139c49d1891d86fe"
 }
 
 output "instance_details" {
