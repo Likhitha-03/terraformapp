@@ -1,16 +1,14 @@
-resource "aws_instance" "web" {
-  ami           = "ami-0182f373e66f89c85"
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.main.id
-  associate_public_ip_address = true
+data "aws_instance" "existing" {
+  instance_id = "i-063327382b7d034af"
+}
 
-  vpc_security_group_ids = [aws_security_group.web_sg.id]
-
-  tags = {
-    Name = "docker-web-app"
+output "instance_details" {
+  value = {
+    instance_id         = data.aws_instance.existing.id
+    public_ip           = data.aws_instance.existing.public_ip
+    private_ip          = data.aws_instance.existing.private_ip
+    availability_zone   = data.aws_instance.existing.availability_zone
   }
 }
 
-output "instance_public_ip" {
-  value = aws_instance.web.public_ip
-}
+
