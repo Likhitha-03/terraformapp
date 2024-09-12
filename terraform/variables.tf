@@ -17,8 +17,19 @@ variable "security_group_id" {
 }
 
 variable "availability_zone" {
-  description = "The availability zone for the subnet"
+  description = "The availability zone of the existing subnet"
   type        = string
   default     = "us-east-1a"
 }
 
+variable "instance_type" {
+  description = "The type of EC2 instance to launch"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "ami" {
+  description = "The AMI to use for the EC2 instance"
+  type        = string
+  default     = ami-0182f373e66f89c85
+}
