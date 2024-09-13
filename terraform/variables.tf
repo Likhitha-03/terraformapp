@@ -1,13 +1,13 @@
 variable "vpc_id" {
   description = "The ID of the existing VPC"
   type        = string
-  default     = "vpc-0ecd36c175ff7f71f"
+  default     = "vpc-ee4e8493"
 }
 
 variable "subnet_id" {
   description = "The ID of the existing subnet"
   type        = string
-  default     = "subnet-0fced310d34fde07b"
+  default     = "subnet-98c973c7"
 }
 
 variable "security_group_id" {
